@@ -1,13 +1,15 @@
 from datetime import datetime
 
 TODAY = datetime.now()
+
+# Variables Robot Control de Cumulos
 result = None
 cantidadAsegurados = None
 cedulas = None
 cedula = None
 nroCedula = None
 montosAsegurables = None
-ubicacion = None
+ubicacion = "C:\Code\RPA\Archivos\datosAsegurado.xlsx"
 logTime = datetime.now()
 sumaPolizas = None
 sumaTotal = None
@@ -25,3 +27,4 @@ cotizacionDelDia = None
 vencimientos = None
 vencimiento = None
 cotizacionDelDiaCarga = None
+
