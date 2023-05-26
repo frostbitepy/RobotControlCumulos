@@ -8,17 +8,18 @@ Library             RPA.Tables
 Library             ../libraries/MyLibrary.py
 
 
+
 *** Keywords ***
 Extraer datos del listado de operaciones
     Open Workbook    datosAsegurado.xlsx     
     ${table}=    Read Worksheet As Table    Report    header=True    
-    ${fechasInicio}=    Obtener fechas de operaciones    Desde    ${table} 
-    ${fechasFin}=    Obtener fechas de operaciones    Hasta    ${table}
+    ${fechasDesde}=    Obtener fechas de operaciones    Desde    ${table} 
+    ${fechasHasta}=    Obtener fechas de operaciones    Hasta    ${table}
     ${capitales}=    Obtener capitales de operaciones    Poliza    ${table} 
     ${polizas}=    Obtener numero de poliza de operaciones    Póliza    ${table}
     ${endosos}=    Obtener numero de endoso de poliza    Endoso    ${table}
-    ${montoVigente}=    Calcular Suma Vigente Total    ${fechasInicio}    ${fechasFin}    
-    ...    ${capitales}   ${polizas}   ${endosos}    ${fechaDesde}    ${fechaHasta}    ${montoRecibido}
+    ${montoVigente}=    Calcular Suma Vigente Total    ${fechaInicio}    ${fechaFin}    
+    ...    ${capitales}   ${polizas}   ${endosos}    ${fechasDesde}    ${fechasHasta}    ${montoRecibido}
     Calcular monto de inclusion y exclusion    ${montoVigente}    ${montoRecibido}
 
 

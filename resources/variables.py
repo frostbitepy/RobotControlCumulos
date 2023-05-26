@@ -6,13 +6,13 @@ TODAY = datetime.now()
 # Variables para trabajar con las tablas
 fechaInicio = "20-06-2023"
 fechaFin = "19-06-2024"
-fechaDesde = None 
-fechaHasta = None  
+fechaDesde = "20-05-2022"
+fechaHasta = "19-07-2023" 
 capital = None
 poliza = None
 endoso = None
 montoVigente = None
-montoRecibido = 450000000
+montoRecibido = 3100000000
 montoLimite = 3000000000
 montoInclusion = None
 montoExclusion = None
