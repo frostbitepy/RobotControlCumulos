@@ -27,8 +27,12 @@ class MyLibrary:
             montoInclusion = 0
             montoExclusion = montoRecibido
         elif (limiteCumulo - montoVigente) < montoRecibido:
-            montoInclusion = limiteCumulo - montoVigente
-            montoExclusion = montoRecibido - montoInclusion
+            if (limiteCumulo - montoVigente) <= 0:
+                montoInclusion = 0
+                montoExclusion = montoRecibido
+            else:
+                montoInclusion = limiteCumulo - montoVigente
+                montoExclusion = montoRecibido - montoInclusion
         elif (limiteCumulo - montoVigente) >= montoRecibido:
             montoInclusion = montoRecibido
             montoExclusion = 0
@@ -40,8 +44,12 @@ class MyLibrary:
             montoInclusion = 0
             montoExclusion = montoRecibido
         elif (limiteCumulo - montoVigente) < montoRecibido:
-            montoInclusion = limiteCumulo - montoVigente
-            montoExclusion = montoRecibido - montoInclusion
+            if (limiteCumulo - montoVigente) <= 0:
+                montoInclusion = 0
+                montoExclusion = montoRecibido
+            else:
+                montoInclusion = limiteCumulo - montoVigente
+                montoExclusion = montoRecibido - montoInclusion
         elif (limiteCumulo - montoVigente) >= montoRecibido:
             montoInclusion = montoRecibido
             montoExclusion = 0
