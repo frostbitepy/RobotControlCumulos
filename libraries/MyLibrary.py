@@ -5,10 +5,6 @@ from RPA.Tables import Tables
 from robot.api.deco import keyword, library
 
 
-
-
-
-
 # Variables
 
 limiteCumulo = 3000000000
@@ -105,8 +101,29 @@ class MyLibrary:
 
 
 
-
+    # Funcion que convierte una lista de capitales en nuevo monto por la cotizacion del dia mas 500 puntos
+    # recibe como parametro una lista de capitales
+    # devuelve una lista de capitales con el nuevo monto
+    def convertir_capitales(self, capitales, cotizacionDelDia):
+        capitalesConvertidos = []
+        for capital in capitales:
+            capitalConvertido = (capital / cotizacionDelDia) * (cotizacionDelDia + 500)
+            capitalesConvertidos.append(capitalConvertido)
+        return capitalesConvertidos
     
+
+    # Funcion que devuelve el nuevo capital consiliado en guaranies teniendo en cuenta la cotizacion mas 
+    # alta entre cotizacion del dia y cotizacion del dia de carga
+    def convertir_capital_mayor(self, capitales, cotizacionesDelDia, cotizacionesDelDiaDeCarga):
+        capitalesConvertidos = []
+        for (capital,cotizacionDelDia,cotizacionDelDiaDeCarga) in zip(capitales,cotizacionesDelDia,cotizacionesDelDiaDeCarga):
+            if cotizacionDelDia >= cotizacionDelDiaDeCarga:
+                capitalConvertido = (capital / cotizacionDelDia) * (cotizacionDelDia + 500)
+            else:
+                capitalConvertido = (capital / cotizacionDelDiaDeCarga) * (cotizacionDelDiaDeCarga + 500)
+
+            capitalesConvertidos.append(capitalConvertido)
+        return capitalesConvertidos
 ###############################################################################################
 
 # print(MyLibrary.vigencias_se_superponen(fechaInicio, fechaFin, fechaDesde, fechaHasta))

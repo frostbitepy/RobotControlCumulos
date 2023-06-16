@@ -15,7 +15,7 @@ Extraer datos del listado de operaciones
     ${table}=    Read Worksheet As Table    Report    header=True    
     ${fechasDesde}=    Obtener fechas de operaciones    Desde    ${table} 
     ${fechasHasta}=    Obtener fechas de operaciones    Hasta    ${table}
-    ${capitales}=    Obtener capitales de operaciones    Poliza    ${table} 
+    ${capitales}=    Obtener capitales de operaciones    Poliza    ${table}   
     ${polizas}=    Obtener numero de poliza de operaciones    Póliza    ${table}
     ${endosos}=    Obtener numero de endoso de poliza    Endoso    ${table}
     ${montoVigente}=    Calcular Suma Vigente Total    ${fechaInicio}    ${fechaFin}    
@@ -36,7 +36,7 @@ Obtener fechas de operaciones
 
 
 Obtener capitales de operaciones
-    [Arguments]    ${columna}    ${table}
+    [Arguments]    ${columna}    ${table}    
     ${capitales}=    Get Table Column    ${table}    ${columna}
     [Return]    ${capitales}
 

@@ -19,6 +19,7 @@ montoExclusion = None
 formatterString = "%d-%m-%y"
 path = "datosAsegurado.xlsx"
 worksheet = "Report"
+moneda = "GS"
 
 
 
